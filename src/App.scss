@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  display: flex;
+  justify-content: stretch;
+}
+
+.list {
+  width: 49%;
+  padding: 5rem 3rem;
+}
+
+.total {
+  margin-bottom: 3rem;
+}
+
+.menu {
+  width: 49%;
+}
+
+.card {
+  padding: 2rem;
+  width: 90%;
+  box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0.5rem 2rem 3rem rgba(0, 0, 0, 0.4);
+  }
+
+  &__amount {
+    &--in {
+      color: green;
+    }
+
+    &--out {
+      color: red;
+    }
+  }
+}
+
+.form {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+
+  & > * {
+    margin-bottom: 2rem;
+    padding: 1rem 3rem;
+  }
+
+  &__input {
+  }
+}

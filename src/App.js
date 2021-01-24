@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import List from "./components/List";
+import Menu from "./components/Menu";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    expenses: [],
+    total: 0,
+  };
+
+  handleExpensesAdded = expense => {
+    let { expenses, total } = this.state;
+    expenses.push(expense);
+
+    total += parseInt(expense.amount);
+    this.setState({ expenses, total });
+  };
+
+  render() {
+    const { expenses, total } = this.state;
+
+    return (
+      <div className="container">
+        <List total={total} expenses={expenses} />
+        <Menu addExpence={this.handleExpensesAdded} />
+      </div>
+    );
+  }
 }
 
 export default App;
