@@ -46,7 +46,14 @@ body {
     box-shadow: 0.5rem 2rem 3rem rgba(0, 0, 0, 0.4);
   }
 
+  &__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &__amount {
+    min-width: 3rem;
     &--in {
       color: green;
     }
